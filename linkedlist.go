@@ -5,7 +5,7 @@ type Node struct {
 	Next  *Node
 }
 
-func (n *Node) Append(value int32) *Node {
+func (n *Node) Add(value int32) *Node {
 	n.Next = &Node{Value: value, Next: nil}
 	return n.Next
 }
@@ -19,7 +19,7 @@ func Create(values []int32) *Node {
 	cur := head
 
 	for i := 1; i < len(values); i++ {
-		cur = cur.Append(values[i])
+		cur = cur.Add(values[i])
 	}
 
 	return head
